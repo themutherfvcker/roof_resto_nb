@@ -1,0 +1,11 @@
+service,suburb,region,lead_value,keyword,local_entities,search_volume,cpc,competitor
+Roof Restoration,Manly,Northern Beaches,200,roof restoration manly,"['Northern Beaches Council','Manly Beach','Warringah Rd']",250,9.8,manlyroofrestoration.com.au
+Roof Restoration,Dee Why,Northern Beaches,200,roof restoration dee why,"['Northern Beaches Council','Dee Why Beach','Pittwater Rd']",230,9.5,deewhyroofing.com.au
+Roof Restoration,Collaroy,Northern Beaches,200,roof restoration collaroy,"['Northern Beaches Council','Collaroy Beach','Narrabeen Park Parade']",180,9.2,collaroyroofrestoration.com.au
+Roof Restoration,Narrabeen,Northern Beaches,200,roof restoration narrabeen,"['Northern Beaches Council','Narrabeen Lagoon','Ocean St']",190,9.0,narrabeenroofing.com.au
+Roof Restoration,Mona Vale,Northern Beaches,200,roof restoration mona vale,"['Northern Beaches Council','Mona Vale Beach','Pittwater Rd']",210,9.7,monavalerestoreroofs.com.au
+Roof Restoration,Newport,Northern Beaches,200,roof restoration newport,"['Northern Beaches Council','Newport Beach','Barrenjoey Rd']",170,9.1,newportroofrestoration.com.au
+Roof Restoration,Avalon,Northern Beaches,200,roof restoration avalon,"['Northern Beaches Council','Avalon Beach','Old Barrenjoey Rd']",160,9.0,avalonroofing.com.au
+Roof Restoration,Palm Beach,Northern Beaches,200,roof restoration palm beach,"['Northern Beaches Council','Palm Beach','Barrenjoey Lighthouse']",140,8.8,palmbeachroofrestore.com.au
+Roof Restoration,Brookvale,Northern Beaches,200,roof restoration brookvale,"['Northern Beaches Council','Warringah Mall','Pittwater Rd']",220,9.6,brookvaleroofing.com.au
+Roof Restoration,Balgowlah,Northern Beaches,200,roof restoration balgowlah,"['Northern Beaches Council','North Harbour Reserve','Sydney Rd']",160,9.1,balgowlahroofrestoration.com.au
