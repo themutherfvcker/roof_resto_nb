@@ -12,7 +12,8 @@
     "skipLibCheck": true,
     "incremental": true,
     "baseUrl": ".",
-    "paths": { }
+    "paths": { },
+    "@/*": ["*"]
   },
   "include": ["**/*.ts", "**/*.tsx"]
 }
