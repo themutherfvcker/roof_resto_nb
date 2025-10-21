@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://roof-resto-nb.vercel.app/sitemap.xml
