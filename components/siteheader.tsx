@@ -1,4 +1,3 @@
-// components/SiteHeader.tsx
 export default function SiteHeader() {
   return (
     <header className="header">
