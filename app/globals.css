@@ -1,15 +1,29 @@
-:root {
-  --maxw: 860px;
-}
-html,body { padding:0; margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; }
-main { max-width: var(--maxw); margin: 0 auto; padding: 32px 16px; line-height: 1.6; }
-h1,h2,h3 { line-height: 1.2; }
-article :where(h2,h3) { margin-top: 1.5em; }
-details { border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px 12px; margin: 8px 0; }
-summary { font-weight: 600; cursor: pointer; }
-.btn { display:inline-block; padding:10px 14px; border-radius:8px; border:1px solid #111; text-decoration:none; }
-.btn-primary { background:#111; color:#fff; }
-.cta { background:#111; color:#fff; padding:10px 14px; border-radius:8px; text-decoration:none; }
-input,textarea { width: 100%; padding: 10px; border:1px solid #e5e7eb; border-radius:8px; }
-form button { padding: 10px 14px; border-radius: 8px; border:0; background:#111; color:#fff; cursor:pointer; }
-.small { color:#6b7280; font-size: 0.9rem; }
+/* app/globals.css */
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; color: #111; background: #fff; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+a { color: #0a0a0a; text-decoration: none; }
+a.underline { text-decoration: underline; }
+button { cursor: pointer; }
+.header { border-bottom: 1px solid #eee; background: #fff; }
+.header-inner { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+.brand { font-weight: 800; font-size: 18px; letter-spacing: 0.3px; }
+.nav a { margin-left: 16px; color: #333; }
+.footer { border-top: 1px solid #eee; margin-top: 40px; padding: 20px 24px; color: #555; font-size: 14px; }
+.hero { border: 1px solid #eee; border-radius: 12px; padding: 24px; background: #fafafa; }
+.hero h1 { font-size: 28px; margin: 0 0 8px 0; }
+.hero p { margin: 0 0 12px 0; color: #555; }
+.ctas { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { padding: 12px 16px; border-radius: 8px; border: 1px solid #111; }
+.btn-primary { background: #111; color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 12px; }
+.card { border: 1px solid #eee; border-radius: 10px; padding: 16px; background: #fff; }
+.prose p { line-height: 1.6; }
+.badges { display:flex; gap:12px; color:#555; font-size:14px; margin-top:8px; flex-wrap: wrap; }
+.faq { border-top:1px solid #eee; margin-top:24px; padding-top:16px; }
+.faq dt { font-weight:700; margin-top:10px; }
+.faq dd { margin: 6px 0 0 0; color:#444; }
+.form input, .form textarea { width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; }
+.form button { padding:10px 16px; border-radius:8px; background:#111; color:#fff; border:1px solid #111; }
+
