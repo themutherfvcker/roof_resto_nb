@@ -1,4 +1,3 @@
-// components/SiteFooter.tsx
 export default function SiteFooter() {
   return (
     <footer className="footer">
