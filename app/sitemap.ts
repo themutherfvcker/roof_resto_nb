@@ -1,4 +1,3 @@
-// app/sitemap.ts
 import type { MetadataRoute } from 'next'
 import { supabasePublic } from '@/lib/supabase'
 
@@ -6,14 +5,11 @@ const BASE_URL = process.env.SITE_URL || 'https://roof-resto-nb.vercel.app'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const supabase = supabasePublic()
-
   try {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('pages')
       .select('slug, updated_at')
       .eq('status', 'published')
-
-    if (error) throw error
 
     const items: MetadataRoute.Sitemap =
       (data || []).map((row) => ({
@@ -23,7 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       }))
 
-    // Include homepage
     items.unshift({
       url: BASE_URL,
       lastModified: new Date(),
@@ -33,14 +28,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return items
   } catch {
-    // Failsafe: at least return the homepage so the build never fails
-    return [
-      {
-        url: BASE_URL,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 1,
-      },
-    ]
+    return [{
+      url: BASE_URL,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 1,
+    }]
   }
 }
