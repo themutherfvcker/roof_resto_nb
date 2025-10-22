@@ -9,49 +9,36 @@ export default async function Home() {
   const { data } = await supabasePublic()
     .from('pages')
     .select('slug,title,meta_desc')
-    .eq('status', 'published')
+    .eq('status','published')
     .order('slug')
 
-  const pages =
-    (data ?? []).map((p) => ({
-      ...p,
-      // cast each dynamic path to Route to satisfy typedRoutes
-      route: (`/${p.slug}`) as Route,
-    }))
-
-  // set your primary CTA target here
-  const CTA_HREF = '/manly/roof-restoration' as Route
+  const pages = (data ?? []).map(p => ({ ...p, route: (`/${p.slug}`) as Route }))
+  const CTA_HREF = pages[0]?.route ?? ('/manly/roof-restoration' as Route)
 
   return (
-    <main className="max-w-4xl mx-auto p-6 space-y-8">
-      <section className="rounded-xl border p-6 bg-white">
-        <h1 className="text-3xl font-bold">Roof Restoration – Northern Beaches</h1>
-        <p className="mt-2 text-gray-700">Licensed &amp; insured. 10-year warranty. Same-day quotes.</p>
-        <div className="mt-4 flex gap-3">
-          <Link href={CTA_HREF} className="bg-black text-white px-5 py-3 rounded-lg">
-            Get My Free Quote
-          </Link>
-          <a href="tel:+611300000000" className="px-5 py-3 rounded-lg border">Call 1300 000 000</a>
+    <main className="space-y-16">
+      <section className="hero">
+        <h1>Roof Restoration – Northern Beaches</h1>
+        <p>Licensed & insured. 10-year warranty. Same-day quotes.</p>
+        <div className="ctas">
+          <Link href={CTA_HREF} className="btn btn-primary">Get My Free Quote</Link>
+          <a className="btn" href="tel:+611300000000">Call 1300 000 000</a>
         </div>
-        <ul className="mt-4 flex gap-4 text-sm text-gray-600">
-          <li>✓ Fully licensed</li>
-          <li>✓ Insured</li>
-          <li>✓ Northern Beaches specialists</li>
-        </ul>
+        <div className="badges">
+          <span>✓ Fully licensed</span><span>✓ Insured</span><span>✓ Local specialists</span>
+        </div>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-xl font-semibold">Choose your suburb</h2>
+      <section>
+        <h2 style={{fontSize:18, margin:'0 0 10px'}}>Choose your suburb</h2>
         {pages.length === 0 ? (
           <p>No published pages yet.</p>
         ) : (
-          <ul className="grid sm:grid-cols-2 gap-3">
-            {pages.map((row) => (
-              <li key={row.slug} className="border rounded p-4 hover:bg-gray-50">
-                <Link href={row.route} className="font-semibold underline">
-                  {row.title || row.slug}
-                </Link>
-                {row.meta_desc && <p className="text-sm text-gray-600 mt-1">{row.meta_desc}</p>}
+          <ul className="grid">
+            {pages.map(row => (
+              <li key={row.slug} className="card">
+                <Link href={row.route} className="underline">{row.title || row.slug}</Link>
+                {row.meta_desc && <p style={{marginTop:6, color:'#555'}}>{row.meta_desc}</p>}
               </li>
             ))}
           </ul>
